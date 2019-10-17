@@ -41,9 +41,9 @@ var data = [trace1, trace2, trace3];
 
 // Define the plot layout
 var layout = {
-  title: "Olympic trends over the years",
-  xaxis: { title: "Year" },
-  yaxis: { title: "Olympic Event" }
+  title: "Views per Month",
+  xaxis: { title: "Month" },
+  yaxis: { title: "Total Views" }
 };
 
 // Plot the chart to a div tag with id "plot"
