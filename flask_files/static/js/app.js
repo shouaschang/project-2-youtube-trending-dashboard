@@ -36,3 +36,43 @@ function buildBar2() {
   };
 
 buildBar2();
+
+function init() {
+  var data = [{
+    values: [1, 39],
+    labels: ["Likes", "Dislikes"],
+    type: "pie"
+  }];
+
+  var layout = {
+    height: 600,
+    width: 800
+  };
+
+  Plotly.plot("pie", data, layout);
+}
+
+function updatePlotly(newdata) {
+  var PIE = document.getElementById("pie");
+  Plotly.restyle(PIE, "values", [newdata]);
+}
+
+function getData(dataset) {
+  var data = [];
+  switch (dataset) {
+  case "dataset1":
+    data = [114188, 1333];
+    break;
+  case "dataset2":
+    data = [655, 25];
+    break;
+  case "dataset3":
+    data = [12654, 1363];
+    break;
+  default:
+    data = [0, 0, 0, 0];
+  }
+  updatePlotly(data);
+}
+
+init();
