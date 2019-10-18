@@ -39,4 +39,5 @@ function getData(dataset) {
   updatePlotly(data);
 }
 
+
 init();
