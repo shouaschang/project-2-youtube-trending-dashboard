@@ -76,3 +76,53 @@ function getData(dataset) {
 }
 
 init();
+
+// Create the Traces
+var trace1 = {
+  x: 300,
+  y: 200,
+  mode: "markers",
+  type: "scatter",
+  name: "high jump",
+  marker: {
+    color: "#2077b4",
+    symbol: "hexagram"
+  }
+};
+
+var trace2 = {
+  x: 100,
+  y: 200,
+  mode: "markers",
+  type: "scatter",
+  name: "discus throw",
+  marker: {
+    color: "orange",
+    symbol: "diamond-x"
+  }
+};
+
+var trace3 = {
+  x: 500,
+  y: 600,
+  mode: "markers",
+  type: "scatter",
+  name: "long jump",
+  marker: {
+    color: "rgba(156, 165, 196, 1.0)",
+    symbol: "cross"
+  }
+};
+
+// Create the data array for the plot
+var data = [trace1, trace2, trace3];
+
+// Define the plot layout
+var layout = {
+  title: "Olympic trends over the years",
+  xaxis: { title: "Year" },
+  yaxis: { title: "Olympic Event" }
+};
+
+// Plot the chart to a div tag with id "plot"
+Plotly.newPlot("scatter", data, layout);
