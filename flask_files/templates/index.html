@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-2">
+  <!--   <div class="col-md-2">
         <div class="well">
           <h5>Select YouTube Category:</h5>
           <select id="selDataset" onchange="getData(this.value)">
@@ -28,7 +28,7 @@
             <option value="dataset2">Sports</option>
             <option value="dataset3">Politics</option>
           </select>
-        </div>
+        </div> -->
       <!--    <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title">Category Data</h3>
@@ -41,8 +41,24 @@
         <!-- Views Scatter Plot -->
         <p> Scatter Plot Here: Total Views per Month for the Category (Dynamic) </p>
       </div>
+      <div class="col-md-2">
+      <!--  <div class="well"> -->
+      <!--    <h5>Pie Chart: select YouTube category:</h5>
+          <select id="selDataset" onchange="getData(this.value)">
+            <option value="dataset1">Music</option>
+            <option value="dataset2">Sports</option>
+            <option value="dataset3">Politics</option>
+          </select>-->
+        </div>
       <div class="col-md-5">
+        <h5>Pie Chart: select YouTube category:</h5>
+        <select id="selDataset" onchange="getData(this.value)">
+          <option value="dataset1">Music</option>
+          <option value="dataset2">Sports</option>
+          <option value="dataset3">Politics</option>
+        </select>
         <div id="pie"></div>
+
         <!-- Likes / Dislikes Pie Chart -->
         <p> Pie Chart Here: Likes / Dislikes in the Category (Dynamic) </p>
       </div>
@@ -68,7 +84,9 @@
   <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="app.js"></script>
+  <script src="/flask_files/static/js/app.js"></script>
+  <script src="../flask_files/static/js/pie.js"></script>
+  <script src="../flask_files/static/js/scatter.js"></script>
 
 </body>
 

@@ -8,8 +8,8 @@ function init() {
 
 // Setup pie layout area
   var layout = {
-    height: 500,
-    width: 500
+    height: 300,
+    width: 300
   };
 
 // Plot the pie chart
