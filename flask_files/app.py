@@ -11,7 +11,7 @@ from flask import Flask, jsonify
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///youtube.sqlite")
+engine = create_engine('postgresql://svang10:postgres@localhost:5432/Youtube_project')
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -45,14 +45,14 @@ def data():
 
     """Return a list of all passenger names"""
     # Query all passengers
-    results = session.query(Passenger.name).all()
+    results = session.query(youtube_video).all()
 
     session.close()
 
     # Convert list of tuples into normal list
-    all_names = list(np.ravel(results))
+    # all_names = list(np.ravel(results))
 
-    return jsonify(all_names)
+    return jsonify(results)
 
 
 if __name__ == '__main__':
