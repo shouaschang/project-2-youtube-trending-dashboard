@@ -22,7 +22,7 @@ function buildBar2() {
     var trace = {
       type: "bar",
       x: ["Music", "Sports", "Politics"],
-      y: [200, 175, 150]
+      y: [6325, 2241, 2489]
 
     };
 
