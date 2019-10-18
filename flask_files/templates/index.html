@@ -14,9 +14,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
-        <img src="../images/youtube_PNG15.png" width=150 height=100 />
-        <h1>YouTube Trending Videos Dashboard</h1>
-        <p>Use the dropdown to select and view trending YouTube categories for 2017-2018.</p>
+        <img src="../images/youtube_logo-768x172.png" width=384 height=86 />
+        <h1>Trending Videos Dashboard</h1>
+        <p>Dashboard visualization of trending YouTube categories for 2017-2018.</p>
       </div>
     </div>
 
@@ -24,11 +24,11 @@
       <div class="col-md-5">
         <div id="scatter"></div>
         <!-- Views Scatter Plot -->
-        <p> Scatter Plot Here: Total Views per Month for the Category (Dynamic) </p>
+        <p> Scatter Plot: Total Views per Month for the Category</p>
       </div>
       <div class="col-md-2"></div>
       <div class="col-md-5">
-        <h5>Pie Chart: select YouTube category:</h5>
+        <h5>Select category</h5>
         <select id="selDataset" onchange="getData(this.value)">
           <option value="dataset1">Music</option>
           <option value="dataset2">Sports</option>
@@ -36,7 +36,7 @@
         </select>
         <div id="pie"></div>
         <!-- Likes / Dislikes Pie Chart -->
-        <p> Pie Chart: Likes / Dislikes in the Category (Dynamic) </p>
+        <p> Pie Chart: Percentage of Likes / Dislikes in the Category </p>
       </div>
     </div>
 
