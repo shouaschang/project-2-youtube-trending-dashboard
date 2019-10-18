@@ -44,11 +44,6 @@ function init() {
     type: "pie"
   }];
 
-  var layout = {
-    height: 600,
-    width: 800
-  };
-
   Plotly.plot("pie", data, layout);
 }
 
@@ -121,8 +116,8 @@ function init2(){
 
   // Define the plot layout
   var layout = {
-    title: "Olympic trends over the years",
-    xaxis: { title: "Y" },
+    title: "Views by Months",
+    xaxis: { title: "Months" },
     yaxis: { title: "Views" }
   };
 
