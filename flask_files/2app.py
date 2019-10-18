@@ -11,27 +11,10 @@ from flask_sqlalchemy import SQLAlchemy
 
 from flask import Flask, jsonify, render_template
 
-
-#################################################
-# Database Setup
-#################################################
-#engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost:5432/Youtube_project')
-#conn = psycopg2.connect(engine)
-
-
-##engine = create_engine('postgresql://postgres:postgres@localhost:5432/Youtube_project')
-##conn = engine.connect()
-
-# reflect an existing database into a new model
-#Base = automap_base()
-# reflect the tables
-#Base.prepare(engine, reflect=True)
-
-## Matts Method
-#################################################
 # Flask Setup
 #################################################
 app = Flask(__name__)
+
 
 
 
@@ -43,22 +26,18 @@ db = SQLAlchemy(app)
 Base = automap_base()
 # Reflect the tables
 Base.prepare(db.engine, reflect=True)
-# Save references to each table (table name in db HomeAnalysis)
-# Metatdata = Base.classes.year_metatdata (this is a separate table in the Bellybutton hw)
-Trending = Base.classes.youtube
+
+trending = Base.Classes.youtube
 
 
 #################################################
 # Flask Routes
 #################################################
-
 @app.route("/")
 def home():
-    """List all available api routes."""
     return (     
         render_template("index.html")
     )
-
 
 @app.route("/data")
 def data():
@@ -84,40 +63,8 @@ def data():
        season_dict["likes"] = likes
        season_dict["dislikes"] = dislikes
        season_dict["comments_count"] = comments_count
-       
        season_data.append(season_dict)
-   return jsonify(data)
-    
-    
-    
-    # Create our session (link) from Python to the DB
-   
-    #session = Session(bind=engine)
-    
-    #inspector = inspect(engine)
-    #inspector.get_table_names()
-  
-    #results = engine.execute ('SELECT * FROM youtube_video').fetchall()
-    #results = session.query("youtube_video").all()
+   return jsonify(season_data)
 
 
-    # Convert list of tuples into normal list
-    # all_names = list(np.ravel(results))
 
-    #return (results)
-    #print(inspector)
-    #return (results.to_json())
-    
-    #session.close()
-    
-    #new trial
-    #stmt = db.session.query(Base.classes.youtube_video).statement
-    #df = pd.read_sql_query(stmt, db.session.bind)
-    #return (df.to_json())
-    
-    #d = {'col1': [1, 2], 'col2': [3, 4]}
-    #df = pd.DataFrame(data=d)
-    #return (df.to_json())
-
-if __name__ == '__main__':
-    app.run(debug=True)

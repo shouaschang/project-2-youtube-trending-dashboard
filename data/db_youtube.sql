@@ -25,3 +25,5 @@ comments_count bigint
 )
 
 select * from youtube_video
+drop table trending
+create table Trending ()
