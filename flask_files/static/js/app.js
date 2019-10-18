@@ -39,7 +39,7 @@ buildBar2();
 
 function init() {
   var data = [{
-    values: [1, 39],
+    values: [114188, 1333],
     labels: ["Likes", "Dislikes"],
     type: "pie"
   }];
