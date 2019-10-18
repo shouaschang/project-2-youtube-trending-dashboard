@@ -44,6 +44,10 @@ function init() {
     type: "pie"
   }];
 
+  var layout = {
+  height: 500,
+  width: 500
+}
   Plotly.plot("pie", data, layout);
 }
 
