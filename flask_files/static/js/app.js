@@ -80,8 +80,8 @@ function init2(){
 
   // Create the Traces
   var trace1 = {
-    x: [1, 2, 3, 4],
-    y: [2, 3, 5, 2],
+    x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    y: [16, 3, 4, 5, 4, 13, 2, 5, 19, 7, 4, 14],
     mode: "markers",
     type: "scatter",
     name: "Music",
@@ -92,8 +92,8 @@ function init2(){
   };
 
   var trace2 = {
-    x: [4, 2, 1, 4],
-    y: [3, 1, 2, 1],
+    x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    y: [4, 2, 1, 4, 7, 10, 5, 5, 3, 5, 1, 7, 10],
     mode: "markers",
     type: "scatter",
     name: "Sports",
@@ -104,8 +104,8 @@ function init2(){
   };
 
   var trace3 = {
-    x: [1, 2, 3, 4],
-    y: [4, 4, 2, 1],
+    x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    y: [3, 1, 7, 6, 13, 2, 4, 8, 7, 2, 5, 15],
     mode: "markers",
     type: "scatter",
     name: "Politics",
