@@ -11,23 +11,27 @@ from flask_sqlalchemy import SQLAlchemy
 
 from flask import Flask, jsonify, render_template
 
-# Flask Setup
-#################################################
-app = Flask(__name__)
-
-
-
-
-# dialect+driver://username:password@host:port/database
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql+psycopg2://postgres:postgres@localhost:5432/Youtube_project"
-db = SQLAlchemy(app)
+engine = create_engine("postgresql+psycopg2://postgres:lovelife2@localhost:5432/Youtube_project")
 
 # Reflect database into  a new model
 Base = automap_base()
 # Reflect the tables
-Base.prepare(db.engine, reflect=True)
 
-trending = Base.Classes.youtube
+Base.prepare(engine, reflect=True)
+
+Trending = Base.Classes.youtube
+session = Session(engine)
+
+# Flask Setup
+#################################################
+app = Flask(__name__)
+
+# dialect+driver://username:password@host:port/database
+#app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql+psycopg2://postgres:postgres@localhost:5432/Youtube_project"
+#db = SQLAlchemy(app)
+
+
+
 
 
 #################################################
@@ -51,7 +55,7 @@ def data():
    Trending.dislikes,
    Trending.comments_count
    ]
-   results = db.session.query(*sel).all()
+   results = session.query(*sel).all()
    season_data = []
    for video_id, trending_date, category_id, views, category, likes, dislikes, comments_count  in results:
        season_dict = {}
