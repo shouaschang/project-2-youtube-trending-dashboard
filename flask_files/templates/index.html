@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>YouTube Trending Videos Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <img src="../images/youtube_PNG15.png" width=150 height=100 />
+        <h1>YouTube Trending Videos Dashboard</h1>
+        <p>Use the dropdown to select and view trending YouTube categories for 2017-2018.</p>
+      </div>
+    </div>
+    <div class="row">
+  <!--   <div class="col-md-2">
+        <div class="well">
+          <h5>Select YouTube Category:</h5>
+          <select id="selDataset" onchange="getData(this.value)">
+            <option value="dataset1">Music</option>
+            <option value="dataset2">Sports</option>
+            <option value="dataset3">Politics</option>
+          </select>
+        </div> -->
+      <!--    <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Category Data</h3>
+          </div>
+          <div id="category-metadata" class="panel-body"></div>
+        </div> -->
+      </div>
+      <div class="col-md-5">
+        <div id="scatter"></div>
+        <!-- Views Scatter Plot -->
+        <p> Scatter Plot Here: Total Views per Month for the Category (Dynamic) </p>
+      </div>
+      <div class="col-md-2">
+      <!--  <div class="well"> -->
+      <!--    <h5>Pie Chart: select YouTube category:</h5>
+          <select id="selDataset" onchange="getData(this.value)">
+            <option value="dataset1">Music</option>
+            <option value="dataset2">Sports</option>
+            <option value="dataset3">Politics</option>
+          </select>-->
+        </div>
+      <div class="col-md-5">
+        <h5>Pie Chart: select YouTube category:</h5>
+        <select id="selDataset" onchange="getData(this.value)">
+          <option value="dataset1">Music</option>
+          <option value="dataset2">Sports</option>
+          <option value="dataset3">Politics</option>
+        </select>
+        <div id="pie"></div>
+
+        <!-- Likes / Dislikes Pie Chart -->
+        <p> Pie Chart Here: Likes / Dislikes in the Category (Dynamic) </p>
+      </div>
+    </div>
+<!--  </div>
+   <div class="row">  -->
+  <!--  <div class="col-md-12"> -->
+  <div>
+    <div class="col-md-2">
+  </div>
+  <div class="col-md-5">
+      <div id="bar1"></div>
+      <!-- Comments Bar Chart - comparing all categories) -->
+      <p> Bar Chart 1 Here: The Number of Comments Compared across all Categories (Static) </p>
+    </div>
+    <div class="col-md-5">
+        <div id="bar2"></div>
+        <!-- Unique Videos Bar Chart - number of unique videos per category) -->
+        <p> Bar Chart 2 Here: The Number of Unique Videos within each Categories (Static) </p>
+      </div>
+  </div>
+
+  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="/flask_files/static/js/app.js"></script>
+  <script src="../flask_files/static/js/pie.js"></script>
+  <script src="../flask_files/static/js/scatter.js"></script>
+
+</body>
+
+</html>
