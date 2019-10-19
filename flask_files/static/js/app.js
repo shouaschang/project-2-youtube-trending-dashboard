@@ -80,11 +80,11 @@ function init2(){
 
   // Create the Traces
   var trace1 = {
-    x: 300,
-    y: 200,
+    x: [1, 2, 3, 4],
+    y: [2, 3, 5, 2],
     mode: "markers",
     type: "scatter",
-    name: "high jump",
+    name: "Music",
     marker: {
       color: "#2077b4",
       symbol: "hexagram"
@@ -92,11 +92,11 @@ function init2(){
   };
 
   var trace2 = {
-    x: 100,
-    y: 200,
+    x: [4, 2, 1, 4],
+    y: [3, 1, 2, 1],
     mode: "markers",
     type: "scatter",
-    name: "discus throw",
+    name: "Sports",
     marker: {
       color: "orange",
       symbol: "diamond-x"
@@ -104,11 +104,11 @@ function init2(){
   };
 
   var trace3 = {
-    x: 500,
-    y: 600,
+    x: [1, 2, 3, 4],
+    y: [4, 4, 2, 1],
     mode: "markers",
     type: "scatter",
-    name: "long jump",
+    name: "Politics",
     marker: {
       color: "rgba(156, 165, 196, 1.0)",
       symbol: "cross"
@@ -137,11 +137,11 @@ function init2(){
     var data = [];
     switch (dataset) {
     case "dataset1":
-      data = {x: 300,
-      y: 200,
+      data = {x: [1, 2, 3, 4],
+      y: [2, 3, 3, 2],
       mode: "markers",
       type: "scatter",
-      name: "high jump",
+      name: "Music",
       marker: {
         color: "#2077b4",
         symbol: "hexagram"
@@ -149,11 +149,11 @@ function init2(){
       };
       break;
     case "dataset2":
-      data = {x: 300,
-      y: 200,
+      data = {x: [1, 2, 3, 4],
+      y: [1, 3, 2, 1],
       mode: "markers",
       type: "scatter",
-      name: "high jump",
+      name: "Sports",
       marker: {
         color: "#2077b4",
         symbol: "hexagram"
@@ -161,11 +161,11 @@ function init2(){
       };
       break;
     case "dataset3":
-      data = {x: 300,
-      y: 200,
+      data = {x: [1, 2, 3, 4],
+      y: [5, 3, 7, 1],
       mode: "markers",
       type: "scatter",
-      name: "high jump",
+      name: "Politics",
       marker: {
         color: "#2077b4",
         symbol: "hexagram"
