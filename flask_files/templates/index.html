@@ -8,12 +8,41 @@
   <title>YouTube Trending Videos Dashboard</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <script type="text/javascript">
+  window.onload = function () {
+  	var chart = new CanvasJS.Chart("bar2", {
+  		animationEnabled: true,
+  		theme: "light2",
+  		title:{
+  			text: "Unique Videos per Category"
+  		},
+  		axisY: {
+  			title: "Unique Videos per YouTube Category"
+  		},
+  		data: [{
+  			type: "column",
+  			showInLegend: true,
+  			legendMarkerColor: "grey",
+  			legendText: "YouTube Category",
+  			dataPoints: [
+  				{ y: 6325, label: "Music" },
+  				{ y: 2241,  label: "Politics" },
+  				{ y: 2489,  label: "Sports" }
+  			]
+  		}]
+  	});
+  chart.render();
+  }
+  </script>
 </head>
 
 <body>
 
+<!-- START OF CONTAINER -->
   <div class="container">
+
+    <!-- START OF JUMBOTRON HEADER -->
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
         <img src="../images/youtube_logo-768x172.png" width=384 height=86 />
@@ -21,14 +50,17 @@
         <p>Dashboard visualization of trending YouTube categories for 2017-2018.</p>
       </div>
     </div>
+    <!-- END OF JUMBOTRON HEADER -->
 
-    <div class="row">
+<!-- START OF SCATTER -->
+  <div class="row">
       <div class="col-md-5">
         <div id="scatter"></div>
         <!-- Views Scatter Plot -->
-        <p> Scatter Plot: Total Views per Month for the Category</p>
+      <!--  <p> Scatter Plot: Total Views per Month for the Category</p> -->
       </div>
       <div class="col-md-2"></div>
+      <!-- START OF PIE -->
       <div class="col-md-5">
         <h5>Select category</h5>
         <select id="selDataset" onchange="getData(this.value)">
@@ -38,33 +70,55 @@
         </select>
         <div id="pie"></div>
         <!-- Likes / Dislikes Pie Chart -->
-        <p> Pie Chart: Percentage of Likes / Dislikes in the Category </p>
-      </div>
-    </div>
-
-   <div class="row">
-  <div>
-  <div class="col-md-5">
-      <div id="bar1"></div>
-      <!-- Comments Bar Chart - comparing all categories) -->
-      <p>Bar Chart 1: The Number of Comments Compared across all Categories</p>
-    </div>
-    <div class="col-md-2"></div>
-    <div class="col-md-5">
-        <div id="bar2"></div>
-  <!--    <div id="chartContainer"></div> -->
-        <!-- Unique Videos Bar Chart - number of unique videos per category) -->
-        <p>Bar Chart 2: The Number of Unique Videos within each Categories</p>
       </div>
   </div>
+  <!-- END OF BAR & PIE -->
+
+<!-- END OF SCATTER -->
+
+  <!-- START OF BAR & PIE -->
+  <div class="row">
+    <!-- START OF BAR1 -->
+      <div class="col-md-5">
+          <div id="bar1"></div>
+        </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-5">
+          <div id="bar2"></div>
+        </div>
+
+
+<div class="row">
+ <div class="col-md-5">
+   <!--  <div id="bar1"></div> -->
+     <!-- Comments Bar Chart - comparing all categories) -->
+   <!--  <p>Bar Chart 1: The Number of Comments Compared across all Categories</p>  -->
+   </div>
+   <div class="col-md-2"></div>
+   <div class="col-md-5">
+     <div id="bar2"></div>
+    <!--<div id="chartContainer"></div> -->
+       <!-- Unique Videos Bar Chart - number of unique videos per category) -->
+   <!--    <p>Bar Chart 2: The Number of Unique Videos within each Categories</p> -->
+  <!--   </div> -->
+  </div>
+
+<!-- START OF CANVAS.JS BAR CHART -->
+  <div class="col-md-12">
+    <div id="chartContainer"></div>
+  </div>
 </div>
+<!-- END OF CANVAS.JS BAR CHART -->
+
+</div>
+<!-- END OF CONTAINER -->
 
   <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <script src="/flask_files/static/js/app.js"></script>
-  <script src="/flask_files/static/js/canvas.js"></script>
+<!--  <script src="/flask_files/static/js/canvas.js"></script> -->
 
 </body>
 
